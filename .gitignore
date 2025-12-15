@@ -1,0 +1,17 @@
+# virtual environment
+.venv/
+venv/
+env/
+
+# cache Python 
+__pycache__/
+*.py[cod]
+
+# env with API key
+.env
+
+# settings VS Code
+.vscode/
+
+# data
+data/
