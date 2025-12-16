@@ -8,13 +8,13 @@ This project meets **100% of the course requirements** and includes the **Bonus 
 
 | Requirement | Status | Implementation Details |
 | :--- | :---: | :--- |
-| **Data Source** | Automated scraping of Wikipedia (NLP, BERT, Transformers). |
-| **Chunking** | Text splitting using `RecursiveCharacterTextSplitter`. |
-| **Retrieval** | **Hybrid Search**: BM25 (Keyword) + Semantic Search (Embeddings). |
-| **LLM Integration** | Uses `LiteLLM` to support **Groq** (Llama-3) and **OpenAI**. |
-| **Reranker** | Post-retrieval re-ranking using a **Cross-Encoder**. |
-| **User Interface** | **Gradio** interface with secure API Key input. |
-| **Citations (BONUS)** | **Implemented!** Inline citations `[ID]` and source list with scores. |
+| **Data Source** | ✅ | Automated scraping of Wikipedia (NLP, BERT, Transformers). |
+| **Chunking** | ✅ | Text splitting using `RecursiveCharacterTextSplitter`. |
+| **Retrieval** | ✅ | **Hybrid Search**: BM25 (Keyword) + Semantic Search (Embeddings). |
+| **LLM Integration** | ✅ | Uses `LiteLLM` to support **Groq** (Llama-3) and **OpenAI**. |
+| **Reranker** | ✅ | Post-retrieval re-ranking using a **Cross-Encoder**. |
+| **User Interface** | ✅ | **Gradio** interface with secure API Key input. |
+| **Citations (BONUS)** | 🌟 | **Implemented!** Inline citations `[ID]` and source list with scores. |
 
 ## Technologies
 
