@@ -1,12 +1,28 @@
 # NLP RAG System
 
-A Retrieval Augmented Generation (RAG) system that uses `sentence_transformers` for embeddings and `BM25` for searching.
+A Retrieval Augmented Generation (RAG) system developed for the NLP Coursework. This project answers questions based on a custom knowledge base (Wikipedia articles) using advanced retrieval techniques including Hybrid Search and Reranking.
+
+## Project Requirements Checklist
+
+This project meets **100% of the course requirements** and includes the **Bonus Task**.
+
+| Requirement | Status | Implementation Details |
+| :--- | :---: | :--- |
+| **Data Source** | Automated scraping of Wikipedia (NLP, BERT, Transformers). |
+| **Chunking** | Text splitting using `RecursiveCharacterTextSplitter`. |
+| **Retrieval** | **Hybrid Search**: BM25 (Keyword) + Semantic Search (Embeddings). |
+| **LLM Integration** | Uses `LiteLLM` to support **Groq** (Llama-3) and **OpenAI**. |
+| **Reranker** | Post-retrieval re-ranking using a **Cross-Encoder**. |
+| **User Interface** | **Gradio** interface with secure API Key input. |
+| **Citations (BONUS)** | **Implemented!** Inline citations `[ID]` and source list with scores. |
 
 ## Technologies
 
 - Python 3.11+
 - Sentence Transformers (paraphrase-multilingual-MiniLM-L12-v2)
+- Cross-Encoder (ms-marco-MiniLM-L-6-v2)
 - Rank BM25
+- LiteLLM (for API handling)
 - Gradio (for UI)
 
 ## How to run

@@ -31,12 +31,23 @@ class RAGSystem:
         self.retriever = retriever
         self.reranker = CrossEncoder('cross-encoder/ms-marco-MiniLM-L-6-v2')
 
-    def retrieve(self, query, top_k=3):
-        bm25_res = self.retriever.search_bm25(query, top_k=10)
-        sem_res = self.retriever.search_semantic(query, top_k=10)
+    def retrieve(self, query, strategy="hybrid", top_k=3):
+        candidates = []
         
-        unique_docs = {d['id']: d for d in bm25_res + sem_res}
-        candidates = list(unique_docs.values())
+        initial_k = top_k * 5 
+
+        if strategy == "bm25":
+            candidates = self.retriever.search_bm25(query, top_k=initial_k)
+            
+        elif strategy == "semantic":
+            candidates = self.retriever.search_semantic(query, top_k=initial_k)
+            
+        else: 
+            bm25_res = self.retriever.search_bm25(query, top_k=initial_k)
+            sem_res = self.retriever.search_semantic(query, top_k=initial_k)
+            
+            unique_docs = {d['id']: d for d in bm25_res + sem_res}
+            candidates = list(unique_docs.values())
         
         if not candidates:
             return []
